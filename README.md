@@ -1,36 +1,16 @@
 # PageObject
 PageObject implementation in Python
 
-# Using the PageObject Pattern
+The project [wiki](https://github.com/OnShift/page_object/wiki)
+ is the first place to go to learn about how to use PageObject.
 
-```python
-# Example PageObject class
-from support.page_object import PageObject
+## Known Issues
 
-class ExamplePage(PageObject):
+See [https://github.com/OnShift/page_object/issues](https://github.com/OnShift/page_object/issues)
 
-    page_url = 'http://pageurl'
+## Contribute
 
-    def initialize_page(self):
-          # name: can be anything you want
-          # id: must match html id on page
-          self.table(name = "example", id = "example_id")
-```
-
-### Visit a PageObject
-
-```python
-@when('I view the example page')
-def visit_example(context):
-    visit_page(ExamplePage)
-```
-
-### Using PageObject Accessor methods
-
-```python
-   on_page(ExamplePage).example_element
-```
-
-### Available Element Accessors
-- Table
--
+* Fork the project.
+* Test drive your feature addition or bug fix.
+* Make sure you describe your new feature with a behave scenario.
+* Provide documentation where needed.
