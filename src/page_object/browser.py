@@ -6,6 +6,10 @@ class Browser():
     _browser = None
 
     @classmethod
+    def set_browser(cls, browser):
+        cls._browser = browser
+        
+    @classmethod
     def selenium_browser(cls):
         if cls._browser is None:
             cls._browser = cls.factory().selenium_browser()
