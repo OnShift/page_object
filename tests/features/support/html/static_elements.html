@@ -3,20 +3,20 @@
     <title>Static Elements Page</title>
 </head>
   <body>
-    <p id='p_id' name='p_name' class='p_class'>Static Elements Page</p>
+    <p id='p_id' name='p_name' class='p_class' data-test-p="p_css">Static Elements Page</p>
 
     <label for="text_field_id">Text Field</label>
-    <input id="text_field_id" name="text_field_name" class="text_field_class"
+    <input id="text_field_id" name="text_field_name" class="text_field_class" data-test-text-field="text_field_css"
            title="text_field_title" data-field="title" size="40" type="text"/>
 
     <input id="hidden_field_id" name="hidden_field_name" class="hidden_field_class"
            size="40" type="hidden" value="12345"/>
 
     <label for="text_area_id">Text Area</label>
-    <textarea rows="2" cols="20" id="text_area_id" class="text_area_class" name="text_area_name"></textarea>
+    <textarea rows="2" cols="20" id="text_area_id" class="text_area_class" name="text_area_name" data-test-text-area="text_area_css"></textarea>
 
     <label for="sel_list_id">Select List</label>
-    <select name="sel_list_name" id="sel_list_id" class="sel_list_class">
+    <select name="sel_list_name" id="sel_list_id" class="sel_list_class" data-test-select-list="select_list_css">
       <option value="option1">Test 1</option>
       <option value="option2">Test 2</option>
       <option value="option3">Test/Test 3</option>
@@ -50,7 +50,7 @@
     <a href="success.html" id="link_id" name="link_name" class="link_class" title="link_title">Google Search</a>
 
     <label for="cb_id">Checkbox</label>
-    <input id="cb_id" name="cb_name" class="cb_class" type="checkbox" value="1"/>
+    <input id="cb_id" name="cb_name" class="cb_class" type="checkbox" value="1" data-test-checkbox="checkbox_css"/>
 
     <label for="milk_id">Radio</label>
     <input type="radio" id="milk_id" name="milk_name" class="milk_class" value="Milk"> Milk <br/>
@@ -63,14 +63,11 @@
     <input type="radio" name="fav_cheese" value="muen">Muenster</input>
     <br/>
 
-    <div id="div_id" name="div_name" class="div_class" title="div_title">
+    <div id="div_id" name="div_name" class="div_class" title="div_title" data-test-div="div_css">
         page-object rocks!
     </div>
-    <div data-entity="test">
-      found using data-entity
-    </div>
 
-    <span id="span_id" name="span_name" class="span_class" title="span_title">
+    <span id="span_id" name="span_name" class="span_class" title="span_title" data-test-span="span_css">
       My alert
     </span>
 

@@ -432,6 +432,7 @@ class Locator(object):
         """
         mapping = {
             'css': By.CSS_SELECTOR,
+            'class': By.CLASS_NAME,
             'tag': By.TAG_NAME,
             'id': By.ID
         }

@@ -1,7 +1,7 @@
-from hamcrest import assert_that, equal_to
 from support.page import Page
 from page_object import Browser
 import os
+
 
 @given(u'I am on the static elements page')
 def step_impl(context):

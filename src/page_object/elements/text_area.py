@@ -15,3 +15,10 @@ class TextArea(Element):
         """
         self.clear()
         self.send_keys(text)
+
+    def get_value(self):
+        """
+        Return:
+            Current value of text field element
+        """
+        return self.attribute('value')

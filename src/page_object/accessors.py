@@ -158,10 +158,14 @@ class Accessors(object):
         def set_method(text):
             return getattr(self, "{0}_element".format(name))().select(text)
 
+        def get_method():
+            return getattr(self, "{0}_element".format(name))().text()
+
         def options():
             return getattr(self, "{0}_element".format(name))().options_text()
 
         setattr(self, "set_{0}".format(name), set_method)
+        setattr(self, "get_{0}".format(name), get_method)
         setattr(self, "{0}_options".format(name), options)
 
         self._standard_methods(name, identifier, 'select_list_for')
@@ -180,8 +184,12 @@ class Accessors(object):
         def uncheck():
             return getattr(self, "{0}_element".format(name))().uncheck()
 
+        def is_checked():
+            return getattr(self, "{0}_element".format(name))().is_checked()
+
         setattr(self, "check_{0}".format(name), check)
         setattr(self, "uncheck_{0}".format(name), uncheck)
+        setattr(self, "is_{0}_checked".format(name), is_checked)
 
         self._standard_methods(name, identifier, 'checkbox_for')
 

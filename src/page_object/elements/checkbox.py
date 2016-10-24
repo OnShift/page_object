@@ -15,3 +15,6 @@ class CheckBox(Element):
     def uncheck(self):
         if(self.element.is_selected()):
             self.element.click()
+
+    def is_checked(self):
+        return self.element.is_selected()

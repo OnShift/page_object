@@ -18,6 +18,9 @@ class SelectList(Select, Element):
     def text(self):
         return self.selected().text()
 
+    def value(self):
+        return self.selected().attribute('value')
+
     def select(self, text):
         return self.select_by_visible_text(text)
 
