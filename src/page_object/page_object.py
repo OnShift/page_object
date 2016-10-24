@@ -23,14 +23,34 @@ class PageObject(LocatorGenerator, Accessors, object):
     @property
     def current_url(self):
         """
-        Gets the URL of the current page.
-
         Return:
             Returns the URL of the current page.
         """
         return self.browser.current_url
 
+    @property
+    def html(self):
+        """
+        Return:
+            Returns the HTML of the current page.
+        """
+        return self.browser.page_source
+
+    @property
+    def title(self):
+        """
+        Return:
+            Returns the title of the current page.
+        """
+        return self.browser.title
+
     def navigate_to(self, url):
+        """
+        Navigate to url.
+
+        Args:
+            url (string): Url to navigate to.
+        """
         self.browser.get(url)
 
     def wait(self, seconds=5):

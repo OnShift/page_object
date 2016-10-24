@@ -12,7 +12,6 @@ class Page(PageObject):
         self.text_area(name='text_area_class', identifier={'class': 'text_area_class'})
         self.text_area(name='text_area_css', identifier={'css': '[data-test-text-area="text_area_css"]'})
 
-
         self.select_list(name='sel_list_id', identifier={'id': 'sel_list_id'})
         self.select_list(name='sel_list_class', identifier={'class': 'sel_list_class'})
         self.select_list(name='sel_list_css', identifier={'css': '[data-test-select-list="select_list_css"]'})
@@ -21,6 +20,15 @@ class Page(PageObject):
         self.checkbox(name='cb_id', identifier={'id': 'cb_id'})
         self.checkbox(name='cb_class', identifier={'class': 'cb_class'})
         self.checkbox(name='cb_css', identifier={'css': '[data-test-checkbox="checkbox_css"]'})
+
+        self.button(name='button_id', identifier={'id': 'button_id'})
+        self.button(name='button_class', identifier={'class': 'button_class'})
+        self.button(name='button_css', identifier={'css': '[data-test-button="button_css"]'})
+
+        self.link(name='google_search_id', identifier={'id': 'link_id'})
+        self.link(name='google_search_class', identifier={'class': 'link_class'})
+        self.link(name='google_search_css', identifier={'css': '[data-test-link="link_css"]'})
+        self.link(name='google_search_tag', identifier={'tag': 'a'})
 
         self.div(name='div_id', identifier={'id': 'div_id'})
         self.div(name='div_class', identifier={'class': 'div_class'})
