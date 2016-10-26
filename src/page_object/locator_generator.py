@@ -11,6 +11,7 @@ class LocatorGenerator:
                 'div',
                 'span',
                 'paragraph',
+                'label',
                 'text_area',
                 'text_field',
                 'link',

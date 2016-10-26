@@ -7,6 +7,7 @@ from page_object.elements.table_cell import TableCell
 from page_object.elements.div import Div
 from page_object.elements.span import Span
 from page_object.elements.paragraph import Paragraph
+from page_object.elements.label import Label
 from page_object.elements.image import Image
 from page_object.elements.select_list import SelectList
 from page_object.elements.text_area import TextArea
@@ -218,6 +219,30 @@ class Locator(object):
             Returns array of Paragraph elements
         """
         return self.elements_for(Paragraph, identifier)
+
+    def label_for(self, identifier):
+        """
+        Method to find a single label element by the identifier
+
+        Arg:
+            identifier (dict): how to identify element and what the value is
+
+        Return:
+            Returns instance of Label element
+        """
+        return self.element_for(Label, identifier)
+
+    def labels_for(self, identifier):
+        """
+        Method to find label elements by an identifier
+
+        Arg:
+            identifier (dict): how to identify elements and what the value is
+
+        Return:
+            Returns array of Label elements
+        """
+        return self.elements_for(Label, identifier)
 
     def link_for(self, identifier):
         """

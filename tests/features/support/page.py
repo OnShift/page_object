@@ -44,3 +44,7 @@ class Page(PageObject):
         self.paragraph(name='paragraph_class', identifier={'class': 'p_class'})
         self.paragraph(name='paragraph_css', identifier={'css': '[data-test-p="p_css"]'})
         self.paragraph(name='paragraph_tag', identifier={'tag': 'p'})
+
+        self.label(name='label_id', identifier={'id': 'label_id'})
+        self.label(name='label_class', identifier={'class': 'label_class'})
+        self.label(name='label_css', identifier={'css': '[data-test-label="label_css"]'})

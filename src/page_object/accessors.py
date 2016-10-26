@@ -133,6 +133,19 @@ class Accessors(object):
 
         self._standard_methods(name, identifier, 'paragraph_for')
 
+    def label(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'label_for')
+
     def h2(self, name, identifier):
         """
         Will generate:
