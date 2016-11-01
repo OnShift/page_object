@@ -1,8 +1,5 @@
 Feature: Button Element
-  In order to interact with buttons
-  Testers will need access and interrogation ability
-
-
+  
     Background:
         Given I am on the static elements page
 

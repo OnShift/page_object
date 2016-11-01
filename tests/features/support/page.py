@@ -48,3 +48,7 @@ class Page(PageObject):
         self.label(name='label_id', identifier={'id': 'label_id'})
         self.label(name='label_class', identifier={'class': 'label_class'})
         self.label(name='label_css', identifier={'css': '[data-test-label="label_css"]'})
+
+        self.image(name='image_id', identifier={'id': 'image_id'})
+        self.image(name='image_class', identifier={'class': 'image_class'})
+        self.image(name='image_css', identifier={'css': '[data-test-image="image_css"]'})
