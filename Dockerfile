@@ -30,13 +30,14 @@ RUN wget -nv -O - http://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 WORKDIR app
 
 COPY src src
-COPY tests tests
+COPY features features
+COPY specs specs
 COPY setup.py setup.py
 COPY requirements.pip requirements.pip
 
 RUN pip install -r requirements.pip
 
-WORKDIR /app/tests/features
+WORKDIR /app/features
 
 ENV BROWSER=HEADLESS
 
