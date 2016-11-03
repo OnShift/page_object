@@ -19,6 +19,9 @@ class Element(LocatorGenerator, object):
         self.generate_locators()
         self.element = element
 
+    def exists(self):
+        return element_exists(self.element)()
+
     def text(self):
         """
         Getter for text within the element
