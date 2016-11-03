@@ -1,6 +1,7 @@
 FROM python:3
 
 RUN apt-get update && \
+  apt-get install -y build-essential && \
     apt-get install -y python-dev libffi-dev && \
     apt-get -yqq install curl unzip && \
     apt-get -yqq  install libnss3 xvfb && \
@@ -34,11 +35,10 @@ COPY features features
 COPY specs specs
 COPY setup.py setup.py
 COPY requirements.pip requirements.pip
+COPY Makefile Makefile
 
 RUN pip install -r requirements.pip
 
-WORKDIR /app/features
-
 ENV BROWSER=HEADLESS
 
-CMD ["behave"]
+CMD ["make", "features"]

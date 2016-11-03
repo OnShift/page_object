@@ -1,5 +1,5 @@
 from . import BaseTestCase
-from page_object import PageFactory
+from page_object import on
 
 
 class TestPageFactory(BaseTestCase):
