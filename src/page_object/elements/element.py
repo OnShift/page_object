@@ -19,6 +19,12 @@ class Element(LocatorGenerator, object):
         self.generate_locators()
         self.element = element
 
+    def is_enabled(self):
+        return self.element.is_enabled()
+
+    def is_disabled(self):
+        return not self.is_enabled()
+
     def exists(self):
         return element_exists(self.element)()
 

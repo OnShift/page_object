@@ -16,6 +16,16 @@ def step_impl(context):
     context.button = context.page.button_element({'id': 'button_id'})
 
 
+@when(u'I check an enabled button')
+def step_impl(context):
+    context.element = context.page.button_id_element()
+
+
+@when(u'I check a disabled button')
+def step_impl(context):
+    context.element = context.page.disabled_button_element()
+
+
 @then(u'I should be able to click the button')
 def step_impl(context):
     context.button.click()

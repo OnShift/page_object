@@ -24,6 +24,7 @@ class Page(PageObject):
         self.button(name='button_id', identifier={'id': 'button_id'})
         self.button(name='button_class', identifier={'class': 'button_class'})
         self.button(name='button_css', identifier={'css': '[data-test-button="button_css"]'})
+        self.button(name='disabled_button', identifier={'id': 'disabled_button'})
 
         self.link(name='google_search_id', identifier={'id': 'link_id'})
         self.link(name='google_search_class', identifier={'class': 'link_class'})
