@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Async Page</title>
+    <script type="text/javascript">
+      function unhide() {
+        document.getElementById("target").style.display="block";
+      }
+
+      function hide() {
+        document.getElementById("target").style.display="none";
+      }
+
+      function enable() {
+        document.getElementById("target").disabled=false;
+      }
+
+      function disable() {
+        document.getElementById("target").disabled=true;
+      }
+
+      function addDiv() {
+        var button = document.createElement("input");
+        button.setAttribute("type", "button");
+        button.setAttribute("value", "New Button");
+        button.setAttribute("id", "new_button");
+        document.body.appendChild(button);
+      }
+
+      function removeDiv() {
+        var button = document.getElementById("new_button");
+        document.body.removeChild(button);
+      }
+     </script>
+  </head>
+  <body>
+    <input type="button" id="target"  value="Target"/>
+    <input type="button" id="enable"  value="Enable"  onclick="setTimeout(function() {enable();}, 2000);" />
+    <input type="button" id="disable" value="Disable" onclick="setTimeout(function() {disable();}, 2000);"/>
+    <input type="button" id="hide"    value="Hide"    onclick="setTimeout(function() {hide();}, 2000);" />
+    <input type="button" id="unhide"  value="Unhide"  onclick="setTimeout(function() {unhide();}, 2000);" />
+    <input type="button" id="create"  value="Create"  onclick="setTimeout(function() {addDiv();}, 2000);"/>
+    <input type="button" id="remove"  value="Remove"  onclick="setTimeout(function() {removeDiv();}, 2000);"/>
+  </body>
+</html>

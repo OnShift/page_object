@@ -1,8 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from page_object.locator_generator import LocatorGenerator
-from page_object.expected_conditions.element_exists import element_exists
-from page_object.expected_conditions.element_has_value import element_has_value
+from page_object.expected_conditions import element_exists, element_has_value, element_predicate
 
 
 class Element(LocatorGenerator, object):
@@ -79,7 +78,10 @@ class Element(LocatorGenerator, object):
         Args:
             timeout (integer): seconds to wait before throwing exception.
         """
-        self.wait_unitl(element_exists(self.element))
+        self.wait_unitl(element_exists(self.element), timeout)
+
+    def when_enabled(self, timeout=5):
+        self.wait_unitl(element_predicate(self.element, 'is_enabled'), timeout)
 
     def has_text(self, text, timeout=5):
         def comparator(actual):
