@@ -9,7 +9,7 @@ class element_exists():
     def __init__(self, element):
         self.element = element
 
-    def __call__(self, drivers = None):
+    def __call__(self, drivers=None):
         if isinstance(self.element, WebElement):
             return True
 

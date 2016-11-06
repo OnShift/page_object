@@ -2,6 +2,7 @@
 def step_impl(context):
     context.expected_text = context.page.label_id()
 
+
 @when(u'I search for the label by "{how}"')
 def step_impl(context, how):
     method = 'label_{0}'.format(how)

@@ -1,5 +1,6 @@
 from hamcrest import assert_that, equal_to
 
+
 @when(u'I click the button')
 def step_impl(context):
     context.page.button_id()

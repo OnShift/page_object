@@ -8,6 +8,7 @@ class SelectList(Select, Element):
     """
     Element class to represent HTML Select List
     """
+
     def __init__(self, element):
         Select.__init__(self, element)
         Element.__init__(self, element)

@@ -1,5 +1,6 @@
 from selenium.common.exceptions import StaleElementReferenceException
 
+
 class element_has_value():
     """
     Expected Condition for waiting for element to have a specific value.

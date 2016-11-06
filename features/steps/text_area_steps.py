@@ -16,10 +16,12 @@ def step_impl(context, how):
 def step_impl(context):
     context.page.text_area_id_element().clear()
 
+
 @then(u'I should be able to type "{text}" into the area')
 def step_impl(context, text):
     context.text_area.set_value(text)
     assert_that(context.text_area.get_value(), equal_to(text.strip()))
+
 
 @then(u'the text area should contain "{text}"')
 def step_impl(context, text):

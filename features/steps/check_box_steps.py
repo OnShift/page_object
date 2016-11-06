@@ -16,6 +16,7 @@ def step_impl(context, how):
     method = 'cb_{0}_element'.format(how)
     context.element = getattr(context.page, method)()
 
+
 @then(u'the First check box should be selected')
 def step_impl(context):
     assert_that(context.page.is_cb_id_checked(), equal_to(True))

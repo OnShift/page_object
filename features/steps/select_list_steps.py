@@ -38,7 +38,7 @@ def step_impl(context, option_value):
 @then(u'option "{index}" should contain "{option_text}"')
 def step_impl(context, index, option_text):
     options = context.page.sel_list_id_element().options_text()
-    assert_that(options[int(index)-1], equal_to(option_text))
+    assert_that(options[int(index) - 1], equal_to(option_text))
 
 
 @then(u'each option should contain "{text}"')

@@ -1,5 +1,6 @@
 from hamcrest import assert_that, equal_to
 
+
 @then(u'it should know it is enabled')
 def step_impl(context):
     assert_that(context.element.is_enabled(), equal_to(True))
