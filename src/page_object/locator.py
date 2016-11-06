@@ -1,23 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from page_object.elements.substitute_web_element import SubstituteWebElement
-from page_object.elements.table import Table
-from page_object.elements.table_row import TableRow
-from page_object.elements.table_cell import TableCell
-from page_object.elements.div import Div
-from page_object.elements.span import Span
-from page_object.elements.paragraph import Paragraph
-from page_object.elements.label import Label
-from page_object.elements.image import Image
-from page_object.elements.select_list import SelectList
-from page_object.elements.text_area import TextArea
-from page_object.elements.text_field import TextField
-from page_object.elements.link import Link
-from page_object.elements.heading import Heading
-from page_object.elements.button import Button
-from page_object.elements.radio_button import RadioButton
-from page_object.elements.checkbox import CheckBox
-from page_object.elements.element import Element
+from page_object.elements import *
 
 
 class Locator(object):
