@@ -21,6 +21,9 @@ class Element(LocatorGenerator, object):
     def is_enabled(self):
         return self.element.is_enabled()
 
+    def is_visible(self):
+        return self.element.is_displayed()
+
     def is_disabled(self):
         return not self.is_enabled()
 
@@ -78,10 +81,25 @@ class Element(LocatorGenerator, object):
         Args:
             timeout (integer): seconds to wait before throwing exception.
         """
-        self.wait_unitl(element_exists(self.element), timeout)
+        self.wait_unitl(element_predicate(self, 'exists'), timeout)
 
     def when_enabled(self, timeout=5):
-        self.wait_unitl(element_predicate(self.element, 'is_enabled'), timeout)
+        """
+        Waits for element to be enabled on the current page.
+
+        Args:
+            timeout (integer): seconds to wait before throwing exception.
+        """
+        self.wait_unitl(element_predicate(self, 'is_enabled'), timeout)
+
+    def when_visible(self, timeout=5):
+        """
+        Waits for element to be visible on the current page.
+
+        Args:
+            timeout (integer): seconds to wait before throwing exception.
+        """
+        self.wait_unitl(element_predicate(self, 'is_visible'), timeout)
 
     def has_text(self, text, timeout=5):
         def comparator(actual):
