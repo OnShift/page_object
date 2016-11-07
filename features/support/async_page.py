@@ -7,3 +7,5 @@ class AsyncPage(PageObject):
         self.button(name='target', identifier={'id': 'target'})
         self.button(name='enable', identifier={'id': 'enable'})
         self.button(name='disable', identifier={'id': 'disable'})
+        self.button(name='create', identifier={'id': 'create'})
+        self.button(name='new', identifier={'id': 'new'})

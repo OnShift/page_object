@@ -6,4 +6,8 @@ Feature: Async Elements
     Scenario: Wait for an element to be enabled
       Given I disable the button
       When I enable the button
-      Then I should be wait for the button to be enabled
+      Then I should be able to wait for the button to be enabled
+
+    Scenario: Wait for an element to be present
+      When I create a new button
+      Then I should be able to wait for the button to be present

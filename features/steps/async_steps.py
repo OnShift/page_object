@@ -12,9 +12,22 @@ def step_impl(context):
     context.page.enable()
 
 
-@then(u'I should be wait for the button to be enabled')
+@when(u'I create a new button')
+def step_impl(context):
+    context.page.create()
+
+
+@then(u'I should be able to wait for the button to be enabled')
 def step_impl(context):
     element = context.page.target_element()
     assert_that(element.is_enabled(), equal_to(False))
     element.when_enabled()
     assert_that(element.is_enabled(), equal_to(True))
+
+
+@then(u'I should be able to wait for the button to be present')
+def step_impl(context):
+    element = context.page.new_element()
+    assert_that(element.exists(), equal_to(False))
+    element.when_present()
+    assert_that(element.exists(), equal_to(True))
