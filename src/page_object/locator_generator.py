@@ -21,10 +21,6 @@ class LocatorGenerator:
                 'checkbox']
 
     def generate_locators(self):
-        """
-        Method to generate and dynamically add all locator functions to self.
-        """
-
         for tag in self.ELEMENTS:
             setattr(self, "{}_element".format(tag), getattr(self.locator, "{0}_for".format(tag)))
             setattr(self, "{}_elements".format(tag), getattr(self.locator, "{0}s_for".format(tag)))
