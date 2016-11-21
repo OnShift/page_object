@@ -146,7 +146,77 @@ class Accessors(object):
 
         self._standard_methods(name, identifier, 'label_for')
 
+    def h1(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'heading_for')
+
     def h2(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'heading_for')
+
+    def h3(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'heading_for')
+
+    def h4(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'heading_for')
+
+    def h5(self, name, identifier):
+        """
+        Will generate:
+            "{name}_element": returns an element
+            "{name}:        : returns text of element
+        """
+
+        def text():
+            return getattr(self, "{0}_element".format(name))().text()
+
+        setattr(self, "{0}".format(name), text)
+
+        self._standard_methods(name, identifier, 'heading_for')
+
+    def h6(self, name, identifier):
         """
         Will generate:
             "{name}_element": returns an element
