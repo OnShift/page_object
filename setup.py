@@ -9,6 +9,6 @@ setup(
 
     install_requires=[
         'pyvirtualdisplay==0.2',
-        'selenium==2.53.6'
+        'selenium==3.0.2'
     ]
 )
