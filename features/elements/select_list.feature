@@ -5,7 +5,7 @@ Feature: Select List Element
 
   Scenario: Selecting an element on the select list
     When I select "Test 2" from the select list
-    Then the current item should be "Test 2"
+    Then the currentsitem should be "Test 2"
 
   Scenario Outline: Locating select lists on the Page
     When I search for the select list by "<search_by>"
