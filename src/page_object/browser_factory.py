@@ -10,9 +10,27 @@ class BrowserFactory(object):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-setuid-sandbox")
 
+    drivers = {
+        "CHROME": '_chrome_driver',
+        "HEADLESS": '_headless_driver',
+        "FIREFOX": '_firefox_driver',
+        "SAFARI": '_safari_driver'
+    }
+
     def selenium_browser(self):
-        browser = str(os.getenv('BROWSER', None))
-        if browser == "HEADLESS":
-            display = Display(visible=0, size=(800, 600))
-            display.start()
+        browser = str(os.getenv('BROWSER', "CHROME"))
+        return getattr(self, self.drivers[browser])()
+
+    def _headless_driver(self):
+        display = Display(visible=0, size=(800, 600))
+        display.start()
+        return self.chrome_driver()
+
+    def _chrome_driver(self):
         return webdriver.Chrome(chrome_options=self.chrome_options)
+
+    def _firefox_driver(self):
+        return webdriver.Firefox()
+
+    def _safari_driver(self):
+        return webdriver.Safari()
