@@ -1,4 +1,5 @@
 import time
+import os
 from .accessors import Accessors
 from .locator_generator import LocatorGenerator
 
@@ -19,6 +20,10 @@ class PageObject(LocatorGenerator, Accessors, object):
         self._load_locator(browser)
         self.generate_locators()
         self.browser = browser
+
+    @property
+    def base_url(self):
+        return os.environ.get('PAGE_OBJECT_BASE_URL', None)
 
     @property
     def current_url(self):
