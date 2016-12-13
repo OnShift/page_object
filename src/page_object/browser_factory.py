@@ -24,7 +24,7 @@ class BrowserFactory(object):
     def _headless_driver(self):
         display = Display(visible=0, size=(800, 600))
         display.start()
-        return self.chrome_driver()
+        return self._chrome_driver()
 
     def _chrome_driver(self):
         return webdriver.Chrome(chrome_options=self.chrome_options)
