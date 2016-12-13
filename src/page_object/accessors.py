@@ -1,3 +1,5 @@
+import os
+
 class Accessors(object):
     """
     Contains the methods that are inserted into your page objects when you inherit from the PageObject class.
@@ -16,7 +18,7 @@ class Accessors(object):
 
     def page_url(self, url):
         def navigate_to(url_params):
-            complete_url = url.format(**url_params)
+            complete_url = url.format(**url_params, base_url=self.base_url)
             self.browser.get(complete_url)
 
         setattr(self, "goto", navigate_to)
