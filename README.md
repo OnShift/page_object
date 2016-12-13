@@ -1,4 +1,7 @@
 # PageObject
+
+[![Build Status](https://travis-ci.org/OnShift/page_object.svg?branch=master)](https://travis-ci.org/OnShift/page_object)
+
 PageObject implementation in Python
 
 The project [wiki](https://github.com/OnShift/page_object/wiki)
