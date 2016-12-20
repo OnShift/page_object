@@ -41,4 +41,4 @@ RUN pip install -r requirements.pip
 
 ENV BROWSER=HEADLESS
 
-CMD ["make", "features"]
+CMD ["make", "test"]

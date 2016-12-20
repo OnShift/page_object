@@ -1,5 +1,4 @@
-.PHONY: specs
-.PHONY: features
+.PHONY: specs features test
 
 specs:
 	py.test -rwx -s specs/
@@ -7,3 +6,5 @@ specs:
 features:
 	cd features/ && \
 	behave
+
+test: specs features
