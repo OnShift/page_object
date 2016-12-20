@@ -11,15 +11,15 @@ class BrowserFactory(object):
     chrome_options.add_argument("--disable-setuid-sandbox")
 
     drivers = {
-        "CHROME": '_chrome_driver',
-        "HEADLESS": '_headless_driver',
-        "FIREFOX": '_firefox_driver',
-        "SAFARI": '_safari_driver',
-        "REMOTE": '_remote_driver'
+        "CHROME": "_chrome_driver",
+        "HEADLESS": "_headless_driver",
+        "FIREFOX": "_firefox_driver",
+        "SAFARI": "_safari_driver",
+        "REMOTE": "_remote_driver"
     }
 
     def selenium_browser(self):
-        browser = str(os.getenv('BROWSER', "CHROME"))
+        browser = str(os.getenv("BROWSER", "CHROME"))
         return getattr(self, self.drivers[browser])()
 
     def _headless_driver(self):
@@ -37,6 +37,6 @@ class BrowserFactory(object):
         return webdriver.Safari()
 
     def _remote_driver(self):
-        url = str(os.getenv('SELENIUM_URL', "http://localhost:4444/wd/hub"))
-        capability = str(os.getenv('CAPABILITY', "EDGE"))
+        url = str(os.getenv("SELENIUM_URL", "http://localhost:4444/wd/hub"))
+        capability = str(os.getenv("CAPABILITY", "EDGE"))
         return webdriver.Remote(url, getattr(webdriver.DesiredCapabilities, capability))
