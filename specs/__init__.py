@@ -14,7 +14,7 @@ class MagicPage(PageObject):
 class BaseTestCase(TestCase):
     fake_browser = None
 
-    def setup_method(self):
+    def setup_method(self, method):
         self.fake_browser = self.create_mock()
         Browser.set_browser(self.fake_browser)
 

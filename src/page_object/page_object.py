@@ -17,6 +17,7 @@ class PageObject(LocatorGenerator, Accessors, object):
             browser (selenium.webdriver.browser) : selenium browser instance to use
             visit_page                    (bool) : force browser to navigate to page, defaults to false.
         """
+        super().__init__()
         self._load_locator(browser)
         self.generate_locators()
         self.browser = browser
