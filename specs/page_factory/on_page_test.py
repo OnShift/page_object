@@ -6,9 +6,6 @@ from . import MagicPage, FakeTestPage
 
 class TestOn(BaseTestCase):
 
-    def setup_method(self, method):
-        super().setup_method()
-
     def test_creates_instance(self):
         page = on(FakeTestPage)
         assert_that(isinstance(page, FakeTestPage), equal_to(True))

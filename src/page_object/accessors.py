@@ -1,4 +1,4 @@
-import os
+from page_object.locator_generator import LocatorGenerator
 
 class Accessors(object):
     """
@@ -15,6 +15,10 @@ class Accessors(object):
         Will generate:
             - self.example_element()
     """
+
+    def __init__(self):
+        for tag in LocatorGenerator.ELEMENTS:
+            setattr(self, "{0}s".format(tag), self._define_plural_accessor(tag))
 
     def page_url(self, url):
         def navigate_to(url_params):
@@ -277,6 +281,15 @@ class Accessors(object):
         setattr(self, "is_{0}_checked".format(name), is_checked)
 
         self._standard_methods(name, identifier, 'checkbox_for')
+
+    def _define_plural_accessor(self, tag):
+        def plural_accessor(name, identifier):
+            def elements():
+                return getattr(self.locator, "{0}s_for".format(tag))(identifier)
+
+            setattr(self, "{0}_elements".format(name), elements)
+
+        return plural_accessor
 
     def _standard_methods(self, name, identifier, method):
         def element():

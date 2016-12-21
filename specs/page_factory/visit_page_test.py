@@ -12,8 +12,7 @@ class CompleteUrlTestPage(PageObject):
 
 class TestVisit(BaseTestCase):
 
-    def setup_method(self, method):
-        super().setup_method()
+    def set_base_url(self):
         import os
         os.environ['PAGE_OBJECT_BASE_URL'] = 'www.pageobject.com'
 
@@ -27,6 +26,7 @@ class TestVisit(BaseTestCase):
         self.fake_browser.get.assert_called_with('www.noop.com')
 
     def test_builds_url_from_base_url(self):
+        self.set_base_url()
         url_params = {'filter': 'start_date:today', 'id': 18}
         visit(CompleteUrlTestPage, url_params=url_params)
 
