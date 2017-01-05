@@ -3,22 +3,16 @@ from page_object import on, PageObject
 from page_object.locator_generator import LocatorGenerator
 from page_object.elements.div import Div
 from .. import BaseTestCase
-
-
-class FakeTestPage(PageObject):
-
-    def define_elements(self):
-        self.divs(name='test_plural', identifier={'css': 'test'})
+from . import FakeTestPage
+from unittest.mock import patch
 
 
 class TestPluralAccessors(BaseTestCase):
 
-    def test_define_plural_accessor_method(self):
-        self.configure_mock(self.fake_browser, {'find_elements.return_value': [object, object]})
+    @patch('page_object.locator.Locator.divs_for')
+    def test_define_plural_accessor_method(self, locator):
         elements = on(FakeTestPage).test_plural_elements()
-        self.fake_browser.find_elements.assert_called_once_with('css selector', 'test')
-        for element in elements:
-            assert_that(element, instance_of(Div))
+        locator.assert_called_once_with({'css': 'test'})
 
     def test_plural_accessor_methods(self):
         page = on(FakeTestPage)
