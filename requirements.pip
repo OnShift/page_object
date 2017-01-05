@@ -1,5 +1,6 @@
 pyvirtualdisplay==0.2
 selenium==3.0.2
 PyHamcrest==1.8.5
+behave==1.2.5
 pytest==3.0.3
 -e .
