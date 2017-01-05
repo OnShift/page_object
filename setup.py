@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="page_object",
-    version="0.0.9",
+    version="0.1.0",
     description='PageObject pattern python implementation',
     packages=find_packages('src'),
     package_dir={'': 'src'},
