@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name="page_object",
-    version="0.1.1",
+    version="0.2.0",
     description="Python implementation of the PageObject pattern",
     author="Onshift Inc.",
     author_email="dev@onshift.com",
     url="https://github.com/OnShift/page_object",
-    license="MIT",
+    license="Apache 2.0",
     keywords=['page_object', 'selenium', 'webdriver'],
     packages=find_packages('src'),
     package_dir={'': 'src'},
