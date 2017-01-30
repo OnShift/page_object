@@ -81,7 +81,7 @@ class Element(LocatorGenerator, object):
         Args:
             timeout (integer): seconds to wait before throwing exception.
         """
-        self.wait_unitl(element_predicate(self, 'exists'), timeout)
+        self.wait_until(element_predicate(self, 'exists'), timeout)
 
     def when_enabled(self, timeout=5):
         """
@@ -90,7 +90,7 @@ class Element(LocatorGenerator, object):
         Args:
             timeout (integer): seconds to wait before throwing exception.
         """
-        self.wait_unitl(element_predicate(self, 'is_enabled'), timeout)
+        self.wait_until(element_predicate(self, 'is_enabled'), timeout)
 
     def when_visible(self, timeout=5):
         """
@@ -99,9 +99,9 @@ class Element(LocatorGenerator, object):
         Args:
             timeout (integer): seconds to wait before throwing exception.
         """
-        self.wait_unitl(element_predicate(self, 'is_visible'), timeout)
+        self.wait_until(element_predicate(self, 'is_visible'), timeout)
 
-    def wait_unitl(self, condtion, timeout=5):
+    def wait_until(self, condtion, timeout=5):
         wait = WebDriverWait(self.element, timeout)
         wait.until(condtion)
 
