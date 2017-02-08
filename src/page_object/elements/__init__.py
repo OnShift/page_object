@@ -8,6 +8,7 @@ from page_object.elements.paragraph import Paragraph
 from page_object.elements.label import Label
 from page_object.elements.image import Image
 from page_object.elements.select_list import SelectList
+from page_object.elements.option import Option
 from page_object.elements.text_area import TextArea
 from page_object.elements.text_field import TextField
 from page_object.elements.link import Link
