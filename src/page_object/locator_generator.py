@@ -4,6 +4,7 @@ class LocatorGenerator:
     """
 
     ELEMENTS = ['select_list',
+                'option',
                 'image',
                 'table',
                 'row',

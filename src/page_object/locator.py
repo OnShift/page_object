@@ -17,6 +17,12 @@ class Locator(object):
     def select_lists_for(self, identifier):
         return self.elements_for(SelectList, identifier)
 
+    def option_for(self, identifier):
+        return self.element_for(Option, identifier)
+
+    def options_for(self, identifier):
+        return self.elements_for(Option, identifier)
+
     def button_for(self, identifier):
         return self.element_for(Button, identifier)
 
