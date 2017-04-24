@@ -1,4 +1,4 @@
-.PHONY: specs features test release
+.PHONY: specs features test clean install build push release
 
 specs:
 	py.test -rwx -s specs/
@@ -7,9 +7,19 @@ features:
 	cd features/ && \
 	behave
 
-test: specs features
+clean:
+	rm -rf dist/
+	rm -rf build/
 
-release:
-	pip install -r requirements.pip && \
-	python setup.py sdist bdist_wheel egg_info && \
-  twine upload dist/*
+install:
+	pip install -r requirements.pip
+
+build:
+	python setup.py sdist bdist_wheel egg_info
+
+push:
+	twine upload dist/*
+
+release: clean install build push
+
+test: specs features
