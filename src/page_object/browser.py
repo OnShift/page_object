@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from page_object.browser_factory import BrowserFactory
 
 
