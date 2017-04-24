@@ -13,6 +13,6 @@ setup(
     package_dir={'': 'src'},
     install_requires=[
         'pyvirtualdisplay==0.2',
-        'selenium==3.0.2'
+        'selenium==3.4.0'
     ]
 )
