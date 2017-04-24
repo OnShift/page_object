@@ -2,7 +2,7 @@ from hamcrest import assert_that, equal_to, instance_of
 from page_object import on
 from .. import BaseTestCase
 from . import FakeTestPage
-from unittest.mock import patch
+from mock import patch
 
 
 class TestDiv(BaseTestCase):

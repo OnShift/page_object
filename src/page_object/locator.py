@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from page_object.elements import *
