@@ -102,7 +102,7 @@ class Element(LocatorGenerator, object):
         self.wait_until(element_predicate(self, 'is_visible'), timeout)
 
     def wait_until(self, condtion, timeout=5):
-        wait = WebDriverWait(self.element, timeout)
+        wait = WebDriverWait(self.element, timeout=timeout, poll_frequency=0.1)
         wait.until(condtion)
 
     def send_keys(self, keys):
