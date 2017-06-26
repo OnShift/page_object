@@ -23,7 +23,8 @@ class BrowserFactory(object):
         return getattr(self, self.drivers[browser])()
 
     def _headless_driver(self):
-        display = Display(visible=0, size=(800, 600))
+        resolution = eval(os.getenv("RESOLUTION", '1920, 1080'))
+        display = Display(visible=0, size=resolution)
         display.start()
         return self._chrome_driver()
 
