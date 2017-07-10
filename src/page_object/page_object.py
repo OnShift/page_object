@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import time
 import os
 from .accessors import Accessors
@@ -17,7 +18,7 @@ class PageObject(LocatorGenerator, Accessors, object):
             browser (selenium.webdriver.browser) : selenium browser instance to use
             visit_page                    (bool) : force browser to navigate to page, defaults to false.
         """
-        super().__init__()
+        super(PageObject, self).__init__()
         self._load_locator(browser)
         self.generate_locators()
         self.browser = browser

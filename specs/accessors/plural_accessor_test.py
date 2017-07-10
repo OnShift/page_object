@@ -4,7 +4,7 @@ from page_object.locator_generator import LocatorGenerator
 from page_object.elements.div import Div
 from .. import BaseTestCase
 from . import FakeTestPage
-from unittest.mock import patch
+from mock import patch
 
 
 class TestPluralAccessors(BaseTestCase):

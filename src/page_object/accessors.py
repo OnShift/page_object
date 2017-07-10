@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from page_object.locator_generator import LocatorGenerator
 
 class Accessors(object):
@@ -22,7 +23,7 @@ class Accessors(object):
 
     def page_url(self, url):
         def navigate_to(url_params):
-            complete_url = url.format(**url_params, base_url=self.base_url)
+            complete_url = url.format(base_url=self.base_url, **url_params)
             self.browser.get(complete_url)
 
         setattr(self, "goto", navigate_to)
