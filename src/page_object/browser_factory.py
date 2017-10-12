@@ -1,7 +1,6 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from pyvirtualdisplay import Display
 
 
 class BrowserFactory(object):
@@ -23,9 +22,7 @@ class BrowserFactory(object):
         return getattr(self, self.drivers[browser])()
 
     def _headless_driver(self):
-        resolution = eval(os.getenv("RESOLUTION", '1920, 1080'))
-        display = Display(visible=0, size=resolution)
-        display.start()
+        self.chrome_options.add_argument("--headless")
         return self._chrome_driver()
 
     def _chrome_driver(self):
