@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 # Install Chrome Driver
-RUN CHROMEDRIVER_VERSION=2.24 && \
+RUN CHROMEDRIVER_VERSION=2.33 && \
     mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
     curl -sS -o /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
     unzip -qq /tmp/chromedriver_linux64.zip -d /opt/chromedriver-$CHROMEDRIVER_VERSION && \
