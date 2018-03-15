@@ -8,6 +8,7 @@ class BrowserFactory(object):
     chrome_options = Options()
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-setuid-sandbox")
+    chrome_options.add_argument("--window-size=1920,1080")
 
     drivers = {
         "CHROME": "_chrome_driver",
