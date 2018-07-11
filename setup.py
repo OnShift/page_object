@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="page_object",
-    version="0.3.2",
+    version="0.3.3",
     description="Python implementation of the PageObject pattern",
     author="Onshift Inc.",
     author_email="dev@onshift.com",
