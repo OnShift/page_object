@@ -74,7 +74,7 @@ class Element(LocatorGenerator, object):
         """
         return self.element.get_attribute(attribute)
 
-    def when_present(self, timeout=5):
+    def when_present(self, timeout=15):
         """
         Waits for element to be present on the current page.
 
@@ -83,7 +83,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'exists'), timeout)
 
-    def when_enabled(self, timeout=5):
+    def when_enabled(self, timeout=15):
         """
         Waits for element to be enabled on the current page.
 
@@ -92,7 +92,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'is_enabled'), timeout)
 
-    def when_visible(self, timeout=5):
+    def when_visible(self, timeout=15):
         """
         Waits for element to be visible on the current page.
 
@@ -101,7 +101,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'is_visible'), timeout)
 
-    def wait_until(self, condtion, timeout=5):
+    def wait_until(self, condtion, timeout=15):
         wait = WebDriverWait(self.element, timeout=timeout, poll_frequency=0.1)
         wait.until(condtion)
 
