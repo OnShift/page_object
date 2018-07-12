@@ -2,12 +2,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from page_object.locator_generator import LocatorGenerator
 from page_object.expected_conditions import element_exists, element_predicate
+import os
 
 
 class Element(LocatorGenerator, object):
     """
     Base class to represent HTML Elements
     """
+
+    DEFAULT_TIMEOUT = os.getenv("DEFAULT_TIMEOUT", 5)
 
     def __init__(self, element):
         """
@@ -74,7 +77,7 @@ class Element(LocatorGenerator, object):
         """
         return self.element.get_attribute(attribute)
 
-    def when_present(self, timeout=15):
+    def when_present(self, timeout=DEFAULT_TIMEOUT):
         """
         Waits for element to be present on the current page.
 
@@ -83,7 +86,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'exists'), timeout)
 
-    def when_enabled(self, timeout=15):
+    def when_enabled(self, timeout=DEFAULT_TIMEOUT):
         """
         Waits for element to be enabled on the current page.
 
@@ -92,7 +95,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'is_enabled'), timeout)
 
-    def when_visible(self, timeout=15):
+    def when_visible(self, timeout=DEFAULT_TIMEOUT):
         """
         Waits for element to be visible on the current page.
 
@@ -101,7 +104,7 @@ class Element(LocatorGenerator, object):
         """
         self.wait_until(element_predicate(self, 'is_visible'), timeout)
 
-    def wait_until(self, condtion, timeout=15):
+    def wait_until(self, condtion, timeout=DEFAULT_TIMEOUT):
         wait = WebDriverWait(self.element, timeout=timeout, poll_frequency=0.1)
         wait.until(condtion)
 
