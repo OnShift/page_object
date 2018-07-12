@@ -10,7 +10,7 @@ class Element(LocatorGenerator, object):
     Base class to represent HTML Elements
     """
 
-    DEFAULT_TIMEOUT = os.getenv("DEFAULT_TIMEOUT", 5)
+    DEFAULT_TIMEOUT = int(os.getenv("DEFAULT_TIMEOUT", 5))
 
     def __init__(self, element):
         """
